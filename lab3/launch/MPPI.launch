@@ -1,0 +1,9 @@
+<launch>
+	<!-- Launch an ROI node and pass any necessary parameters -->
+    <arg name="sub_topic" default="/camera/color/image_raw" />
+	<arg name="pub_topic" default="/camera/color/image_interest" />
+	<node name="trainer" pkg="lab3" type="MPPI.py" output="screen">
+        <param name="sub_topic" value="$( arg sub_topic )" />
+        <param name="pub_topic" value="$( arg pub_topic )" />
+	</node>
+</launch>
